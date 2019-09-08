@@ -4,7 +4,7 @@ import 'package:score_app/models/equipe.dart';
 class EquipesProvider with ChangeNotifier {
   List<Equipe> _items = [
     Equipe(id: 1, name: 'Achères'),
-    Equipe(id: 2, name: 'Poissy')
+    Equipe(id: 2, name: 'Poissy'),
   ];
 
   Equipe _currentEquipe;

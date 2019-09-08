@@ -11,30 +11,31 @@ class EquipeList extends StatelessWidget {
   ) {
     final equipesP = Provider.of<EquipesProvider>(context);
     final equipes = equipesP.items;
-    return InkWell(
-        onTap: () {
-          equipesP.currentEquipe = equipes[index];
-          Navigator.push(
-            context,
-            SlideRightRoute(page: Home(), duration: 200),
-          );
-        },
-        child: Card(
-          margin: EdgeInsets.symmetric(vertical: 15.0, horizontal: 45.0),
-          elevation: 5.0,
-          color: Colors.white,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-          child: Column(
+    return Card(
+      margin: EdgeInsets.symmetric(vertical: 15.0, horizontal: 45.0),
+      elevation: 5.0,
+      color: Colors.white,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      child: InkWell(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          onTap: () {
+            equipesP.currentEquipe = equipes[index];
+            Navigator.push(
+              context,
+              SlideRightRoute(page: Home(), duration: 200),
+            );
+          },
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(equipes[index].name,
                   style: TextStyle(
                     color: Colors.blueAccent,
                     fontSize: 30,
-                  ))
+                  )),
             ],
-          ),
-        ));
+          )),
+    );
   }
 
   @override
