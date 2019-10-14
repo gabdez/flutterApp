@@ -117,7 +117,7 @@ class _SelectEquipeState extends State<SelectEquipe> {
           ),
         ],
       ),
-      floatingActionButton: new FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         heroTag: 'floatBtn',
         onPressed: () {

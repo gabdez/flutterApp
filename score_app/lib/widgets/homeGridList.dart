@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:score_app/screens/calendar.dart';
+import 'package:score_app/screens/lancerMatch.dart';
 import 'package:score_app/screens/monEquipe.dart';
 import 'package:score_app/transitions/SlideRightRoute.dart';
 
@@ -47,29 +49,37 @@ class HomeGridList extends StatelessWidget {
             ),
           ),
         ),
-        Card(
-          elevation: 6,
-          color: Colors.white,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              Expanded(
-                flex: 2,
-                child: Icon(
-                  FontAwesomeIcons.play,
-                  color: Colors.blueGrey,
-                  size: 70.0,
+        InkWell(
+          onTap: () => {
+            Navigator.push(
+              context,
+              SlideRightRoute(page: LancerMatch(), duration: 200),
+            )
+          },
+          child: Card(
+            elevation: 6,
+            color: Colors.white,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                Expanded(
+                  flex: 2,
+                  child: Icon(
+                    FontAwesomeIcons.play,
+                    color: Colors.blueGrey,
+                    size: 70.0,
+                  ),
                 ),
-              ),
-              Expanded(
-                flex: 1,
-                child: Text(
-                  'Lancer match',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 15, color: Colors.black26),
+                Expanded(
+                  flex: 1,
+                  child: Text(
+                    'Lancer match',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 15, color: Colors.black26),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
         Card(
@@ -131,7 +141,7 @@ class HomeGridList extends StatelessWidget {
               Expanded(
                 flex: 2,
                 child: Icon(
-                  FontAwesomeIcons.calendarAlt,
+                  FontAwesomeIcons.projectDiagram,
                   color: Colors.blueGrey,
                   size: 70.0,
                 ),
@@ -139,7 +149,7 @@ class HomeGridList extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: Text(
-                  'Calendrier',
+                  'Mes Systèmes',
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 15, color: Colors.black26),
                 ),
@@ -147,29 +157,37 @@ class HomeGridList extends StatelessWidget {
             ],
           ),
         ),
-        Card(
-          elevation: 6,
-          color: Colors.white,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              Expanded(
-                flex: 2,
-                child: Icon(
-                  FontAwesomeIcons.slidersH,
-                  color: Colors.blueGrey,
-                  size: 70.0,
+        InkWell(
+          onTap: () => {
+            Navigator.push(
+              context,
+              SlideRightRoute(page: Calendar(), duration: 200),
+            )
+          },
+          child: Card(
+            elevation: 6,
+            color: Colors.white,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                Expanded(
+                  flex: 2,
+                  child: Icon(
+                    FontAwesomeIcons.calendarAlt,
+                    color: Colors.blueGrey,
+                    size: 70.0,
+                  ),
                 ),
-              ),
-              Expanded(
-                flex: 1,
-                child: Text(
-                  'Paramètres',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 15, color: Colors.black26),
+                Expanded(
+                  flex: 1,
+                  child: Text(
+                    'Calendrier',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 15, color: Colors.black26),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ],

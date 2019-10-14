@@ -6,7 +6,13 @@ class Joueur {
   String name;
   int numero;
   Postes poste;
-  bool estTitulaire;
+  bool estTitulaire = false;
 
-  Joueur({this.id, this.prenom, this.name, this.numero, this.poste});
+  Joueur(
+      {this.id,
+      this.prenom,
+      this.name,
+      this.numero,
+      this.poste,
+      this.estTitulaire});
 }

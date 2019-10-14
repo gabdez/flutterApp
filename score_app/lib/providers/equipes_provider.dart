@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:score_app/enums/postes.dart';
 import 'package:score_app/models/equipe.dart';
+import 'package:score_app/models/joueur.dart';
 
 class EquipesProvider with ChangeNotifier {
   List<Equipe> _items = [
-    Equipe(id: 1, name: 'Achères'),
+    Equipe.avecJoueurs(1, "Achères", [
+      Joueur(
+          id: 1,
+          name: "Fernandez",
+          prenom: "Gabriel",
+          numero: 23,
+          poste: Postes.arriere,
+          estTitulaire: true)
+    ]),
     Equipe(id: 2, name: 'Poissy'),
   ];
 
@@ -23,6 +33,11 @@ class EquipesProvider with ChangeNotifier {
 
   void addEquipe(value) {
     _items.add(Equipe(id: _items.length + 1, name: value));
+    notifyListeners();
+  }
+
+  void addJoueur(Equipe equipe, Joueur joueur) {
+    equipe.joueurs.add(joueur);
     notifyListeners();
   }
 }

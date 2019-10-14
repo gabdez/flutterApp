@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "554727499752",
+    "firebase_url": "https://bench-score.firebaseio.com",
+    "project_id": "bench-score",
+    "storage_bucket": "bench-score.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:554727499752:android:a3b34d8562649ab45b265d",
+        "android_client_info": {
+          "package_name": "com.example.score_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "554727499752-ia50gfemdqc14bkapi44u830l3galfur.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmCDmYnPhoRwDr5K6ZvlxjyKq8T2r2ziY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "554727499752-ia50gfemdqc14bkapi44u830l3galfur.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

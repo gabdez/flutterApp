@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:score_app/providers/equipes_provider.dart';
 import 'package:score_app/screens/home.dart';
 import 'package:score_app/transitions/SlideRightRoute.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class EquipeList extends StatelessWidget {
   Widget _buildProductItem(
@@ -20,10 +21,14 @@ class EquipeList extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(10)),
           onTap: () {
             equipesP.currentEquipe = equipes[index];
-            Navigator.push(
-              context,
-              SlideRightRoute(page: Home(), duration: 200),
-            );
+            SharedPreferences.getInstance()
+              ..then((prefs) {
+                prefs.setInt('idEquipe', equipes[index].id);
+                Navigator.push(
+                  context,
+                  SlideRightRoute(page: Home(), duration: 200),
+                );
+              });
           },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
