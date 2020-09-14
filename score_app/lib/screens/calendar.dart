@@ -66,13 +66,14 @@ class _CalendarState extends State<Calendar> {
                   },
                   fullscreenDialog: true))
               .then((response) => {
-                    matchP.addMatch(
-                        equipesP.currentEquipe.id,
-                        m.Match(
-                            equipe: equipesP.currentEquipe,
-                            nomEquipeAdv: response[0],
-                            estDomicile: response[1],
-                            date: response[2]))
+                    if (response != null && response.length > 0)
+                      matchP.addMatch(
+                          equipesP.currentEquipe.id,
+                          m.Match(
+                              equipe: equipesP.currentEquipe,
+                              nomEquipeAdv: response[0],
+                              estDomicile: response[1],
+                              date: response[2]))
                   });
         },
       ),

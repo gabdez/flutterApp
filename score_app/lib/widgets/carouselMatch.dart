@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:date_format/date_format.dart';
 import 'package:score_app/models/match.dart' as m;
+import 'package:score_app/widgets/matchCard.dart';
 
 class CarouselMatch extends StatelessWidget {
   final String title;
@@ -32,60 +32,7 @@ class CarouselMatch extends StatelessWidget {
             controller: PageController(viewportFraction: 0.8),
             itemCount: listeMatchs.length,
             itemBuilder: (context, index) {
-              return Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10),
-                  child: Card(
-                    color: Colors.white,
-                    elevation: 4,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0)),
-                    child: Container(
-                      child: Column(
-                        children: <Widget>[
-                          Expanded(
-                            child: Padding(
-                              padding: EdgeInsets.all(15),
-                              child: Stack(
-                                children: <Widget>[
-                                  Positioned(
-                                    top: 10,
-                                    child: Text(
-                                      listeMatchs[index].nomEquipeAdv,
-                                      style: TextStyle(
-                                          color: Colors.black38, fontSize: 30),
-                                    ),
-                                  ),
-                                  Positioned(
-                                    top: 50,
-                                    child: Text(
-                                        listeMatchs[index].estDomicile
-                                            ? 'Domicile'
-                                            : 'Extérieur',
-                                        style: TextStyle(
-                                            color: Colors.black26,
-                                            fontSize: 15)),
-                                  ),
-                                  Positioned(
-                                    top: 70,
-                                    child: Text(
-                                      formatDate(listeMatchs[index].date, [
-                                        dd,
-                                        '-',
-                                        mm,
-                                        '-',
-                                        yyyy,
-                                      ]),
-                                      style: TextStyle(color: Colors.black26),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ));
+              return MatchCard(listeMatchs[index]);
               /* Container(
                       margin: EdgeInsets.symmetric(horizontal: 10),
                       child: Card(

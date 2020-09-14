@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:score_app/providers/equipes_provider.dart';
+import 'package:score_app/screens/parametre.dart';
 import 'package:score_app/transitions/SlideLeftRoute.dart';
+import 'package:score_app/transitions/SlideRightRoute.dart';
 import 'package:score_app/widgets/homeGridList.dart';
 import 'package:score_app/widgets/myClipper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -53,6 +55,10 @@ class _HomeState extends State<Home> {
                             value: 1,
                             child: Text("Changer d'équipe"),
                           ),
+                          PopupMenuItem(
+                            value: 2,
+                            child: Text("Paramètres"),
+                          ),
                         ],
                         onSelected: (value) async {
                           if (value == 1) {
@@ -62,6 +68,11 @@ class _HomeState extends State<Home> {
                               context,
                               SlideLeftRoute(
                                   page: SelectEquipe(), duration: 200),
+                            );
+                          } else if (value == 2) {
+                            Navigator.push(
+                              context,
+                              SlideRightRoute(page: Parametre(), duration: 200),
                             );
                           }
                         },

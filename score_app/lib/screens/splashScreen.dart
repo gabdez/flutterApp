@@ -96,7 +96,7 @@ class _SplashScreenState extends State<SplashScreen>
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text('Basketball Score',
+                      Text('Bench Score',
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 35.0,
